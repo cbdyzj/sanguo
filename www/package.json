@@ -1,0 +1,23 @@
+{
+  "name": "sanguo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alchemy-works/sanguo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alchemy-works/sanguo/issues"
+  },
+  "homepage": "https://github.com/alchemy-works/sanguo#readme",
+  "dependencies": {
+    "vue": "^3.2.33"
+  }
+}
