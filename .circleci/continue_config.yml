@@ -1,0 +1,44 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@5.1.0
+
+parameters:
+  run-build-pages-job:
+    type: boolean
+    default: false
+  run-build-components-job:
+    type: boolean
+    default: false
+
+jobs:
+  build-pages:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - node/install:
+          node-version: '18.7'
+      - run:
+          name: 'build'
+          command: 'echo Build Pages && npx pnpm install && npm run build'
+  build-components:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - node/install:
+          node-version: '18.7'
+      - run:
+          name: 'build'
+          command: 'echo Build Components && npx pnpm install && npm run build'
+
+workflows:
+  build-pages-job:
+    when: << pipeline.parameters.run-build-pages-job >>
+    jobs:
+      - build-pages
+  build-components-job:
+    when: << pipeline.parameters.run-build-components-job >>
+    jobs:
+      - build-components
