@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Favicon from '../components/Favicon'
 
 export default function Home() {
+
     return (
         <>
             <Head>
